@@ -1,0 +1,15 @@
+.idea
+.vscode
+node_modules
+.jest
+dist
+coverage
+.eslintcache
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS X
+.DS_STORE

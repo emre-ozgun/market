@@ -1,0 +1,11 @@
+dist
+node_modules
+coverage
+.vscode
+
+environments
+
+.babelrc
+custom.d.ts
+jest.config.js
+.eslintrc.js

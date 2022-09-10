@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@base/*": ["./src/base/*"],
+      "@services/*": ["./src/services/*"],
+      "@store/*": ["./src/store/*"],
+      "@routes/*": ["./src/routes/*"]
+    },
+    "target": "es6",
+    "module": "commonjs",
+    "removeComments": true,
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true
+  },
+  "include": [
+    "src/assets",
+    "src/components",
+    "src/layouts",
+    "src/pages",
+    "src/base",
+    "src/services",
+    "src/store",
+    "src/routes",
+
+    "src/App.tsx",
+    "src/index.tsx",
+    "custom.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "jest.config.js"
+  ]
+}
