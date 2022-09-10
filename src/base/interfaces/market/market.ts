@@ -21,6 +21,10 @@ interface ICompanies {
   account: number;
   contact: string;
 }
+interface IBasket {
+  name: string;
+  price: string;
+}
 interface IMarket {
   products: IProducts[];
   companies: ICompanies[];
@@ -29,5 +33,6 @@ interface IMarket {
 export {
   IProducts,
   ICompanies,
+  IBasket,
   IMarket
 }

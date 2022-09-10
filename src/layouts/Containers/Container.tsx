@@ -1,6 +1,9 @@
 import React from "react"
 import { Layout } from "antd"
+
 import GlobalHelmet from "@components/GlobalHelmet";
+import Header from "@layouts/Header";
+
 
 
 type ContainerProps = {
@@ -12,6 +15,7 @@ type ContainerProps = {
 const Container: React.FC<ContainerProps> = ({ title, children, className }) => {
   return (
     <Layout className={`fadeIn ${className}`}>
+      <Header />
       <Layout.Content>
         {
           children && (

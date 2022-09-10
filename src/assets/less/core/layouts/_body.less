@@ -1,0 +1,40 @@
+@fontName: "OpenSans";
+@fontWeights: "Light", "Medium", "Regular", "SemiBold", "Bold", "ExtraBold";
+@fontWeightsNum: 200, 300, 400, 500, 600, 700;
+
+.fontFace(@indexPrefix: 1) when (@indexPrefix =< length(@fontWeights)) {
+  @fontWeight: extract(@fontWeights, @indexPrefix);
+  @fontWeightNum: extract(@fontWeightsNum, @indexPrefix);
+
+  @fontFullName: "@{fontName}-@{fontWeight}";
+  @fileName: "../../../fonts/@{fontFullName}";
+
+  @font-face {
+    font-family: @fontName;
+    font-weight: @fontWeightNum;
+    font-style: normal;
+    src: local("@{fontFullName}"),
+    url("@{fileName}.ttf") format("truetype")
+  }
+
+  .fontFace(@indexPrefix + 1);
+}
+
+.fontFace();
+@defaultSystemFont: "@{fontName}", sans-serif;
+
+
+body {
+  height: 100%;
+  .flex();
+  .flex-column();
+  font: 500 16px @defaultSystemFont;
+
+  #root {
+    height: 100%;
+  }
+
+  .ant-layout {
+    background-color: @gray-200;
+  }
+}

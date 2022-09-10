@@ -1,0 +1,164 @@
+.ant-layout-header {
+  height: 76px;
+
+  &.getir-header {
+    .flex();
+    .justifyBetween();
+    background-color: @blue;
+    .w-100();
+    color: @white;
+
+    .ant-row {
+      .w-100();
+
+      >div {
+        &:nth-child(1) {
+          visibility: hidden;
+        }
+
+        &:nth-child(2) {
+          .flex();
+          .justifyCenter();
+
+          >div {
+            .flex();
+            .justifyCenter();
+            .h-100();
+
+            >div {
+              .flex();
+              .alignCenter();
+              .justifyCenter();
+
+              svg {}
+            }
+          }
+        }
+
+        &:nth-child(3) {
+          .flex();
+          .justifyEnd();
+          .h-100();
+          cursor: pointer;
+
+          span {
+            .flex();
+            .alignCenter();
+            .justifyEnd();
+            background-color: @dark-blue;
+            padding: 0 1.27rem;
+
+            >div {
+              margin-right: 8px;
+
+              >div {
+                .flex();
+              }
+            }
+
+            >div {
+              &:nth-child(2) {
+                margin-bottom: 0rem;
+                color: @white;
+                font-size: 14px;
+                line-height: 18px;
+                font-weight: 600;
+                letter-spacing: .14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ant-dropdown {
+  .getir-header-basket {
+    width: 296px;
+    border: 8px solid @blue;
+    max-height: 254px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      .none();
+    }
+
+    .ant-list {
+      .ant-list-footer {
+        .flex();
+        .w-100();
+        .justifyEnd();
+        padding: 0px 22px 16px 0px;
+
+        span {
+          .flex();
+          .justifyCenter();
+          .alignCenter();
+          padding: 24px 17px;
+          bottom: 0;
+          border: 2px solid @blue;
+          width: 92px;
+          height: 51px;
+          color: @blue;
+        }
+      }
+
+      .ant-list-items {
+        padding: 1px 22px 16px 22px;
+
+
+        .ant-list-item {
+          border-bottom: 1px solid @gray-100;
+          padding: 17px 0;
+
+          .ant-list-item-meta {
+            .ant-list-item-meta-content {
+              .ant-list-item-meta-title {
+                font-size: 14px;
+                font-weight: 400;
+                color: @black;
+              }
+
+              .ant-list-item-meta-description {
+                color: @blue;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+
+        .ant-list-item-action {
+          margin-left: 0rem;
+
+          li {
+            .flex();
+
+            button {
+              background: none;
+              border: none;
+              box-shadow: none;
+              color: @blue;
+
+            }
+
+            .basket-item-quantity {
+              .flex();
+              .alignCenter();
+              .justifyCenter();
+              width: 32px;
+              height: 32px;
+              color: @white;
+              font-weight: 600;
+              background-color: @blue;
+            }
+          }
+        }
+      }
+    }
+
+    .ant-btn-icon-only>* {
+      font-size: 12px;
+    }
+  }
+}
