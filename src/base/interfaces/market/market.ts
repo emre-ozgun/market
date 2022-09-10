@@ -21,8 +21,13 @@ interface ICompanies {
   account: number;
   contact: string;
 }
+interface IMarket {
+  products: IProducts[];
+  companies: ICompanies[];
+}
 
 export {
   IProducts,
-  ICompanies
+  ICompanies,
+  IMarket
 }
