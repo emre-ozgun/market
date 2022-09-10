@@ -5,7 +5,15 @@ interface ISystem {
   theme: TTheme;
   direction: TDirection;
 }
+interface IRoute {
+  key?: string;
+  path: string;
+  className?: string;
+  component: any;
+  title?: string;
+}
 
 export {
-  ISystem
+  ISystem,
+  IRoute
 }

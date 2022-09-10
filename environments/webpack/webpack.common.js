@@ -79,7 +79,8 @@ module.exports = {
       chunkFilename: "[id].[contenthash].css"
     }),
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "./src/index.html",
+      favicon: "./src/favicon.ico"
     }),
     new CompressionPlugin({
       test: /\.js(\?.*)?$/i,
