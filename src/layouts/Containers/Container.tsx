@@ -5,12 +5,13 @@ import GlobalHelmet from "@components/GlobalHelmet";
 
 type ContainerProps = {
   title: string;
+  className?: string;
   children: React.ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({ title, children }) => {
+const Container: React.FC<ContainerProps> = ({ title, children, className }) => {
   return (
-    <Layout className="">
+    <Layout className={`fadeIn ${className}`}>
       <Layout.Content>
         {
           children && (
