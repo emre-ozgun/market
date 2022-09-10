@@ -20,7 +20,7 @@ const getProductsAction = (): IMarketActions => ({
     payload: { companies }
   });
 
-export {
+export const MarketActions = {
   getProductsAction,
   setProductsAction,
   getCompaniesAction,
