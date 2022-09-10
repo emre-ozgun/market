@@ -6,12 +6,12 @@ export interface IAppConfig {
   version: string;
 }
 
-let appConfig: IAppConfig = { ...productionConfig };
+let AppConfig: IAppConfig = { ...productionConfig };
 
 if (process.env.NODE_ENV === "production") {
-  appConfig = { ...productionConfig };
+  AppConfig = { ...productionConfig };
 } else if (process.env.NODE_ENV === "development") {
-  appConfig = { ...developmentConfig };
+  AppConfig = { ...developmentConfig };
 }
 
-export default appConfig;
+export default AppConfig;
