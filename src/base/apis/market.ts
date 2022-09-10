@@ -1,12 +1,12 @@
+import ProxyService from "@services/proxy.service";
 import { Market } from "@base/enums"
-import proxyService from "@services/proxy.service";
 
 const GetProducts = () => {
-  return proxyService.get(Market.Products);
+  return ProxyService.get(Market.Products);
 },
 
   GetCompanies = () => {
-    return proxyService.get(Market.Companies);
+    return ProxyService.get(Market.Companies);
   }
 
 export { GetProducts, GetCompanies }
