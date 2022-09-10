@@ -22,8 +22,8 @@
       "@store/*": ["./src/store/*"],
       "@routes/*": ["./src/routes/*"]
     },
-    "target": "es6",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "CommonJS",
     "removeComments": true,
     "alwaysStrict": true,
     "allowUnreachableCode": false,
