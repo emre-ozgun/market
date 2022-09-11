@@ -1,7 +1,7 @@
-export * from "./UI";
-export * from "./GlobalHelmet";
-export * from "./History";
-export * from "./Page";
-export * from "./Product/Product";
-export * from "./Product/Product.Item";
-export * from "./Filter";
+import GlobalHelmet from "./GlobalHelmet";
+import HistoryRouter from "./History/HistoryRouter";
+import Filter from "./Filter";
+import Page from "./Page";
+import Product from "./Product/Product";
+
+export { HistoryRouter, Filter, Page, Product, GlobalHelmet }

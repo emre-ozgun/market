@@ -1,8 +1,8 @@
 import React from "react"
 import { Layout } from "antd"
 
-import GlobalHelmet from "@components/GlobalHelmet";
 import Header from "@layouts/Header";
+import GlobalHelmet from "@components/GlobalHelmet";
 
 
 

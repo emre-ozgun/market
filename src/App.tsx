@@ -5,7 +5,7 @@ import { IRoute } from "@base/interfaces";
 import { getRouteConfig } from "@services/route.service";
 
 import { history } from "@components/History";
-import HistoryRouter from "@components/History/HistoryRouter";
+import { HistoryRouter } from "./components";
 
 
 const App = () => {
