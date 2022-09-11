@@ -1,12 +1,15 @@
 import React from "react"
+import { Typography } from "antd";
 
 
 const Footer = () => {
 
   return (
-    <div>
-      Footer
-    </div>
+    <footer>
+      <Typography.Paragraph>
+        ©2019 Market • Privacy Policy
+      </Typography.Paragraph>
+    </footer>
   )
 }
 

@@ -1,0 +1,73 @@
+.ant-pagination {
+
+  .ant-pagination-prev,
+  .ant-pagination-next {
+    button {
+      span {
+        svg * {
+          fill: @blue;
+        }
+      }
+    }
+
+    &.ant-pagination-disabled {
+      button {
+        span {
+          svg * {
+            fill: #697488;
+          }
+        }
+      }
+    }
+
+    .ant-pagination-item-link,
+    .ant-pagination-item {
+      width: 32px;
+      height: 40px;
+      .flex();
+      .alignCenter();
+      .justifyCenter();
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  .ant-pagination-item {
+    width: 32px;
+    height: 40px;
+    .flex();
+    .alignCenter();
+    .justifyCenter();
+    background-color: transparent;
+    border: none;
+  }
+
+  .ant-pagination-item-active {
+    background-color: @blue;
+    border-color: @blue;
+
+    a {
+      color: @white;
+      font-size: 13px;
+
+      &:hover {
+        color: @blue;
+      }
+    }
+  }
+
+  .ant-pagination-jump-prev,
+  .ant-pagination-jump-next {
+
+    &.ant-pagination-jump-prev-custom-icon,
+    &.ant-pagination-jump-next-custom-icon {
+      width: 32px;
+      height: 40px;
+      .flex();
+      .alignCenter();
+      .justifyCenter();
+      background-color: transparent;
+      border: none;
+    }
+  }
+}

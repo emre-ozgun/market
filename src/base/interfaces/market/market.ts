@@ -1,8 +1,8 @@
 interface ITags {
-  tags: string[];
+  tags: any;
 }
 interface IProducts {
-  tags: ITags[];
+  tags: ITags;
   price: number;
   name: string;
   description: string;

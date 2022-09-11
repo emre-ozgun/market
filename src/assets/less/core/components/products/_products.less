@@ -10,7 +10,8 @@
   .ant-card {
 
     &.getir-product-item {
-      height: auto;
+      height: 225px;
+      max-height: 225px;
       margin-bottom: 1rem;
       cursor: pointer;
       width: 124px;
@@ -25,10 +26,13 @@
           .ant-card-meta-detail {
             .ant-card-meta-title {
               color: @blue;
+              font-size: 13px;
             }
 
             .ant-card-meta-description {
               color: @black-300;
+              font-size: 13px;
+              width: 95%;
             }
           }
         }
@@ -39,7 +43,7 @@
       padding: 16px;
       border-radius: 12px;
       border: 1px solid @gray-500;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       .flex();
       .justifyCenter();
 

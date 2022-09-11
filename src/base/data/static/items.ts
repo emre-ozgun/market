@@ -1,4 +1,6 @@
-export const items = [
+import { IProducts } from "@base/interfaces";
+
+export const items: IProducts[] = [
   {
     "tags": [
       "Trees"

@@ -3,6 +3,7 @@
     .flex();
     .w-100();
     height: auto;
+    max-width: 608px;
 
     >div {
       >div {
@@ -14,13 +15,21 @@
 
     .page-inner {
       .flex();
+      .flex-column();
       height: auto;
 
       >div {
         &:nth-child(1) {
           .flex();
           flex-wrap: wrap;
+          margin-bottom: 32px;
         }
+      }
+
+      .ant-pagination {
+        margin-bottom: 32px;
+        .flex();
+        .justifyCenter();
       }
     }
   }
