@@ -1,9 +1,9 @@
 import React from "react"
 import { ReactSVG } from "react-svg";
-import { Col, Layout, Row } from "antd";
+import { Col, Layout, Row, Tooltip, Typography } from "antd";
 
-const Basket = React.lazy(() => import("./Basket")),
-  marketIcon = require("@assets/images/market.svg") as string;
+const marketIcon = require("@assets/images/market.svg") as string,
+  basketIcon = require("@assets/icons/basket.svg") as string;
 
 const Header = () => {
   return (
@@ -16,7 +16,12 @@ const Header = () => {
           <ReactSVG src={marketIcon} />
         </Col>
         <Col xs={24} md={8}>
-          <Basket />
+          <Tooltip placement="left" title="Basket">
+            <Typography.Text>
+              <ReactSVG src={basketIcon} />
+              <Typography.Paragraph>₺ 39,97</Typography.Paragraph>
+            </Typography.Text>
+          </Tooltip>
         </Col>
       </Row>
     </Layout.Header>

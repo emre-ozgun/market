@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Filter, Page, Product } from "@components/index"
+import { Basket, Filter, Page, Product } from "@components/index"
 import { initialSortData } from "@components/Filter/data"
 import Content from "@layouts/Containers/Content"
 
@@ -20,6 +20,7 @@ const Market = () => {
       <Page title="Products" className="page">
         <Product />
       </Page>
+      <Basket />
     </Content>
   )
 }

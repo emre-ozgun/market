@@ -1,0 +1,120 @@
+.getir-header-basket {
+  width: 444px;
+  border: 8px solid @blue;
+  overflow: auto;
+  background-color: @white;
+  right: 30%;
+  position: sticky;
+  margin-left: 16px;
+  top: 128px;
+  max-height: calc(100vh - 170px);
+  height: 338px;
+
+  &::-webkit-scrollbar {
+    .none();
+  }
+
+  .ant-list {
+    .ant-list-footer {
+      .flex();
+      .w-100();
+      .justifyEnd();
+      padding: 0px 22px 16px 0px;
+
+      span {
+        .flex();
+        .justifyCenter();
+        .alignCenter();
+        padding: 24px 17px;
+        bottom: 0;
+        border: 2px solid @blue;
+        width: 92px;
+        height: 51px;
+        color: @blue;
+      }
+    }
+
+    .ant-list-items {
+      padding: 1px 22px 16px 22px;
+
+
+      .ant-list-item {
+        border-bottom: 1px solid @gray-100;
+        padding: 17px 0;
+
+        .ant-list-item-meta {
+          .ant-list-item-meta-content {
+            .ant-list-item-meta-title {
+              font-size: 14px;
+              font-weight: 400;
+              color: @black;
+            }
+
+            .ant-list-item-meta-description {
+              color: @blue;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .ant-list-item-action {
+        margin-left: 0rem;
+
+        li {
+          .flex();
+
+          button {
+            background: none;
+            border: none;
+            box-shadow: none;
+            color: @blue;
+
+          }
+
+          .basket-item-quantity {
+            .flex();
+            .alignCenter();
+            .justifyCenter();
+            width: 32px;
+            height: 32px;
+            color: @white;
+            font-weight: 600;
+            background-color: @blue;
+          }
+        }
+      }
+    }
+  }
+
+  .ant-list-empty-text {
+    .basket-empty {
+      padding-top: 85px;
+
+      >div {
+        >div {
+          svg * {
+            fill: @blue;
+          }
+        }
+      }
+
+      h5 {
+        color: @blue;
+      }
+
+      >div {
+        &:nth-child(3) {
+          color: @black-300;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+
+
+  .ant-btn-icon-only>* {
+    font-size: 12px;
+  }
+}

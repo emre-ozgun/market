@@ -1,14 +1,29 @@
 import React from "react"
-import { Row } from "antd";
+import { Button, Card } from "antd";
 
 
-const ProductItem = () => {
+const ProductCoverBG = () => <div className="product-item-cover"></div>,
 
-  return (
-    <Row className="getir-product-item">
-      Product Item INIT
-    </Row>
-  )
-}
+  ProductItem = () => {
+
+    return (
+      <Card
+        className="getir-product-item"
+        cover={
+          <ProductCoverBG />
+        }
+        actions={[
+          <>
+            <Button htmlType="button" type="primary" block>Add</Button>
+          </>
+        ]}
+      >
+        <Card.Meta
+          title="₺ 14,99"
+          description="Gorgeous Office Mug"
+        />
+      </Card>
+    )
+  }
 
 export default ProductItem;
