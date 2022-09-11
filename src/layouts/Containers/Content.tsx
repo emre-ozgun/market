@@ -1,9 +1,8 @@
 import React from "react"
 import { Layout } from "antd"
 
-import Header from "@layouts/Header";
-import Footer from "@layouts/Footer";
 import GlobalHelmet from "@components/GlobalHelmet";
+import { Footer, Header } from "..";
 
 
 

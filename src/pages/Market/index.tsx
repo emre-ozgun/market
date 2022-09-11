@@ -9,7 +9,7 @@ import { items } from "@base/data"
 
 import { Basket, Filter, Page, Product } from "@components/index"
 import { initialSortData } from "@components/Filter/data"
-import Content from "@layouts/Containers/Content"
+import { Content } from "@layouts/index"
 
 
 
