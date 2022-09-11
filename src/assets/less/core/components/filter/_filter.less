@@ -1,0 +1,37 @@
+.filter {
+  .flex();
+  max-width: 296px;
+  height: 400px;
+  margin-right: 16px;
+
+  .filter-title {
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: @blue-400;
+  }
+
+  .filter-sorting-container {
+    >div {
+      &:nth-child(2) {
+        background: @white;
+        height: 181px;
+        padding: 24px;
+
+        .ant-space-item {
+          margin-bottom: 8px;
+
+          label {
+            >span {
+              &:nth-child(2) {
+                color: @black-300;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    max-height: 214px;
+  }
+}

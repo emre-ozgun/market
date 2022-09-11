@@ -6,17 +6,17 @@ import Header from "@layouts/Header";
 
 
 
-type ContainerProps = {
+type ContentProps = {
   title: string;
   className?: string;
   children: React.ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({ title, children, className }) => {
+const Content: React.FC<ContentProps> = ({ title, children, className }) => {
   return (
     <Layout className={`fadeIn ${className}`}>
       <Header />
-      <Layout.Content>
+      <Layout.Content className="getir-content-container">
         {
           children && (
             <React.Fragment>
@@ -30,4 +30,4 @@ const Container: React.FC<ContainerProps> = ({ title, children, className }) => 
   )
 }
 
-export default Container;
+export default Content;

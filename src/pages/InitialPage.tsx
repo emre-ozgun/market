@@ -1,14 +1,14 @@
 import React from "react"
 
-import Container from "@layouts/Containers/Container"
+import Content from "@layouts/Containers/Content"
 
 
 const InitialPage = () => {
 
   return (
-    <Container title="Anasayfa">
+    <Content title="Anasayfa">
       <div>InitialPage</div>
-    </Container>
+    </Content>
   )
 }
 
