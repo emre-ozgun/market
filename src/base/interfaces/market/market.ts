@@ -1,5 +1,3 @@
-import { TFilters } from "@base/types";
-
 interface ITags {
   tags: string[];
 }
@@ -31,15 +29,10 @@ interface IMarket {
   products: IProducts[];
   companies: ICompanies[];
 }
-interface IFilter {
-  type: TFilters;
-  label: string;
-}
 
 export {
   IProducts,
   ICompanies,
   IBasket,
-  IMarket,
-  IFilter
+  IMarket
 }

@@ -4,7 +4,7 @@ type TDirection = "ltr" | "rtl";
 
 type TLanguage = "tr" | "en" | "sa";
 
-type TFilters = "radio" | "checkbox";
+type TFilters = "radio" | "checkbox" | "searchableCheckbox";
 
 export {
   TTheme,

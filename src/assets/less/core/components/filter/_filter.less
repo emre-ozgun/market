@@ -7,6 +7,19 @@
 
   >div {
     max-height: 274px;
+
+    &:nth-child(1) {
+      margin-bottom: 24px;
+      max-height: 214px;
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 24px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .filter-title {
@@ -15,7 +28,13 @@
     color: @blue-400;
   }
 
-  .filter-sorting-container {
+  .filter-sorting-radio {
+    max-height: 214px;
+  }
+
+  .filter-sorting-radio,
+  .filter-searchable-checkbox {
+
     >div {
       &:nth-child(2) {
         background: @white;
@@ -30,6 +49,7 @@
               &:nth-child(2) {
                 color: @black-300;
                 font-weight: 400;
+                font-size: 13px;
               }
             }
           }
@@ -37,6 +57,51 @@
       }
     }
 
-    max-height: 214px;
+    overflow: hidden;
+  }
+
+  .filter-searchable-checkbox {
+    max-height: 274px;
+
+    >div {
+      &:nth-child(2) {
+        background: @white;
+        height: 244px;
+
+        .ant-input {
+          margin-bottom: 17px;
+        }
+
+        .checkbox-check-all {
+          padding-bottom: 12px;
+        }
+
+        .ant-list {
+          max-height: 142px;
+          overflow: auto;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          .ant-list-items {
+            .ant-list-item {
+              border-bottom: none;
+              padding: 5px 0;
+
+              label {
+                >span {
+                  &:nth-child(2) {
+                    color: @black-300;
+                    font-weight: 400;
+                    font-size: 13px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
