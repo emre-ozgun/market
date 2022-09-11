@@ -12,7 +12,7 @@ const Market = () => {
     { label: "Sorting", type: "radio", items: initialSortData },
     { label: "Brands", type: "searchableCheckbox", items: initialSortData },
     { label: "Tags", type: "searchableCheckbox", items: initialSortData }
-  ]
+  ];
 
   return (
     <Content title="Anasayfa" className="fadeIn">
@@ -25,4 +25,4 @@ const Market = () => {
   )
 }
 
-export default Market
+export default Market;

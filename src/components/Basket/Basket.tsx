@@ -1,39 +1,16 @@
 import React from "react"
-
-import { IBasket } from "@base/interfaces";
-import BasketItem from "./Basket.Item";
+import { BasketItems } from "@base/data/static/basket";
 
 
-const BasketItems: IBasket[] = [
-  {
-    name: "Example Product",
-    price: "₺ 14,99"
-  },
-  {
-    name: "Example Product",
-    price: "₺ 14,99"
-  },
-  {
-    name: "Example Product",
-    price: "₺ 14,99"
-  },
-  {
-    name: "Example Product",
-    price: "₺ 14,99"
-  }, 
-  {
-    name: "Example Product",
-    price: "₺ 14,99"
+
+const BasketItem = React.lazy(() => import("./Basket.Item")),
+
+  Basket = () => {
+    return (
+      <div className="getir-header-basket">
+        <BasketItem data={BasketItems} />
+      </div>
+    )
   }
-];
-
-const Basket = () => {
-
-  return (
-    <div className="getir-header-basket">
-      <BasketItem data={BasketItems} />
-    </div>
-  )
-}
 
 export default Basket;

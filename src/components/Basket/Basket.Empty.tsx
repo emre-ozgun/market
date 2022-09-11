@@ -1,6 +1,7 @@
-import { Typography } from "antd";
 import React from "react"
 import { ReactSVG } from "react-svg";
+import { Typography } from "antd";
+
 
 
 const basketIcon = require("@assets/icons/basket.svg") as string,
@@ -20,4 +21,4 @@ const basketIcon = require("@assets/icons/basket.svg") as string,
     )
   }
 
-export default BasketEmpty
+export default BasketEmpty;

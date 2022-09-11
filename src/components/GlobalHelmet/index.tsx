@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+
 import { TDirection, TLanguage } from "@base/types";
 
 
@@ -11,10 +12,10 @@ type GlobalHelmetProps = {
 }
 
 /**
- * @param {string} language - defaultSystemConfig'e setlenen language parametresini beklemektedir.
- * @param {string} direction - defaultSystemConfig'e setlenen direction parametresini beklemektedir.
- * @param {string} title - Oluşturulan sayfaların title keylerini bekler.
- * @param {string} description - Oluştrulan sayfaların var ise açıklamalarını bekler.
+ * @param {string} language
+ * @param {string} direction
+ * @param {string} title
+ * @param {string} description
  */
 
 const GlobalHelmet = ({ language, direction, title, description }: GlobalHelmetProps) => {

@@ -5,6 +5,7 @@ import { IFilter } from "@base/interfaces";
 import { filterTypes } from "./types";
 
 
+
 type FilterProps = {
   filters: any[];
 }
