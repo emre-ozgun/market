@@ -12,6 +12,7 @@ interface IFilter {
   className?: string;
   placeholder?: string;
   value?: string;
+  loading?: boolean;
 }
 
 export {

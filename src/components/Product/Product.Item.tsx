@@ -1,5 +1,8 @@
 import React from "react"
-import { Button, Card } from "antd";
+import { useSelector } from "react-redux";
+import { Button, Card, Spin } from "antd";
+
+import { IStore } from "@store/IStore";
 
 
 
@@ -12,18 +15,25 @@ const ProductCover = React.lazy(() => import("./Product.Cover")),
 
   ProductItem = ({ price, name }: ProductItemProps) => {
 
-    const addToBasket = () => {
-      console.log("ADD IS WORK");
-    }
+    const { loader } = useSelector((state: IStore) => ({
+      loader: state.system.loader
+    })),
+
+      addToBasket = () => {
+        console.log("ADD IS WORK");
+      }
 
     return (
-      <Card
-        className="getir-product-item"
-        cover={<ProductCover />}
-        actions={[<Button key="add-to-basket" htmlType="button" type="primary" block onClick={addToBasket}>Add</Button>]}
-      >
-        <Card.Meta title={`₺ ${price}`} description={name} />
-      </Card>
+      <Spin size="default" spinning={loader}>
+        <Card
+          className="getir-product-item"
+          cover={<ProductCover />}
+          actions={[<Button key="add-to-basket" htmlType="button" type="primary" block onClick={addToBasket}>Add</Button>]}
+        >
+          <Card.Meta title={`₺ ${price}`} description={name} />
+        </Card>
+      </Spin>
+
     )
   }
 

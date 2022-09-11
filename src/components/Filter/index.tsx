@@ -1,5 +1,5 @@
 import React from "react"
-import { Checkbox, Col, Input, List, Radio, Space, Typography } from "antd";
+import { Checkbox, Col, Input, List, Radio, Skeleton, Space, Typography } from "antd";
 
 import { IFilter } from "@base/interfaces";
 import { filterTypes } from "./types";
@@ -30,19 +30,21 @@ const Filter = ({ filters }: FilterProps) => {
                         {filterItem.label}
                       </Typography.Paragraph>
                       <Col xs={24} md={24}>
-                        <Radio.Group>
-                          <Space direction="vertical">
-                            {
-                              filterItem.items && Object.values(filterItem.items).map(({ id, value }) => {
-                                return (
-                                  <Radio key={id} value={id}>
-                                    {value}
-                                  </Radio>
-                                )
-                              })
-                            }
-                          </Space>
-                        </Radio.Group>
+                        <Skeleton loading={filterItem.loading} active paragraph>
+                          <Radio.Group>
+                            <Space direction="vertical">
+                              {
+                                filterItem.items && Object.values(filterItem.items).map(({ id, value }) => {
+                                  return (
+                                    <Radio key={id} value={id}>
+                                      {value}
+                                    </Radio>
+                                  )
+                                })
+                              }
+                            </Space>
+                          </Radio.Group>
+                        </Skeleton>
                       </Col>
                     </Col>
                   )
@@ -55,27 +57,29 @@ const Filter = ({ filters }: FilterProps) => {
                         {filterItem.label}
                       </Typography.Paragraph>
                       <Col xs={24} md={24}>
-                        <Input
-                          placeholder={`Search ${filterItem.label}`}
-                          onChange={onFilterChange}
-                          className={filterItem.className}
-                          value={filterItem.value}
-                        />
-                        <Checkbox onChange={onFilterChange} className="checkbox-check-all">
-                          <Typography.Text>
-                          {`All (${filterItem.items.length})`}
-                          </Typography.Text>
-                        </Checkbox>
-                        <List
-                          dataSource={Object.values(filterItem.items)}
-                          renderItem={(item) => (
-                            <List.Item key={item.id}>
-                              <Checkbox onChange={onFilterChange}>
-                                {item.value}
-                              </Checkbox>
-                            </List.Item>
-                          )}
-                        />
+                        <Skeleton loading={filterItem.loading} active paragraph>
+                          <Input
+                            placeholder={`Search ${filterItem.label}`}
+                            onChange={onFilterChange}
+                            className={filterItem.className}
+                            value={filterItem.value}
+                          />
+                          <Checkbox onChange={onFilterChange} className="checkbox-check-all">
+                            <Typography.Text>
+                              {`All (${filterItem.items.length})`}
+                            </Typography.Text>
+                          </Checkbox>
+                          <List
+                            dataSource={Object.values(filterItem.items)}
+                            renderItem={(item) => (
+                              <List.Item key={item.id}>
+                                <Checkbox onChange={onFilterChange}>
+                                  {item.value}
+                                </Checkbox>
+                              </List.Item>
+                            )}
+                          />
+                        </Skeleton>
                       </Col>
                     </Col>
                   )

@@ -1,7 +1,9 @@
 import React from "react"
+import { useSelector } from "react-redux";
 import { Button, List, Spin, Typography } from "antd";
-import { LoadingOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
+import { IStore } from "@store/IStore";
 import { IBasket } from "@base/interfaces";
 
 const BasketEmpty = React.lazy(() => import("./Basket.Empty"));
@@ -13,7 +15,10 @@ type BasketItemProps = {
 }
 
 const BasketItem = ({ data }: BasketItemProps) => {
-  const [loading, setLoading] = React.useState<boolean>(true),
+
+  const { loader } = useSelector((state: IStore) => ({
+    loader: state.system.loader
+  })),
 
     addQuantity = () => {
       console.log("ADD_QUATITY");
@@ -23,15 +28,9 @@ const BasketItem = ({ data }: BasketItemProps) => {
       console.log("REMOVE_QUATITY");
     };
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
 
   return (
-    <Spin size="large" spinning={loading} indicator={<LoadingOutlined />}>
+    <Spin size="default" spinning={loader}>
       <List
         locale={{ emptyText: <BasketEmpty /> }}
         dataSource={data}

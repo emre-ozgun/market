@@ -4,10 +4,12 @@ import { Col, Layout, Row, Tooltip, Typography } from "antd";
 
 
 
+
 const marketIcon = require("@assets/images/market.svg") as string,
   basketIcon = require("@assets/icons/basket.svg") as string,
 
   Header = () => {
+
     return (
       <Layout.Header className="getir-header">
         <Row>

@@ -1,5 +1,6 @@
-import { IMarket } from "@base/interfaces";
+import { IMarket, ISystem } from "@base/interfaces";
 
 export interface IStore {
-  market: IMarket;
+  market: IMarket,
+  system: ISystem;
 }
