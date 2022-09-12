@@ -16,7 +16,7 @@ const Content: React.FC<ContentProps> = ({ title, children, className }) => {
   return (
     <Layout className={`fadeIn ${className}`}>
       <Header />
-      <Layout.Content className="getir-content-container">
+      <Layout.Content className="market-content-container">
         {
           children && (
             <React.Fragment>

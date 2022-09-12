@@ -20,7 +20,7 @@ const ProductCover = React.lazy(() => import("./Product.Cover")),
     return (
       <Skeleton loading={loading} active paragraph>
         <Card
-          className="getir-product-item"
+          className="market-product-item"
           cover={<ProductCover />}
           actions={[<Button key="add-to-basket" htmlType="button" type="primary" block onClick={addToBasket}>Add</Button>]}
         >

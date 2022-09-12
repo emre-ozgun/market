@@ -11,7 +11,7 @@ const marketIcon = require("@assets/images/market.svg") as string,
   Header = () => {
 
     return (
-      <Layout.Header className="getir-header">
+      <Layout.Header className="market-header">
         <Row>
           <Col xs={24} md={8}>
             Getir

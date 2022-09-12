@@ -7,7 +7,7 @@ const BasketItem = React.lazy(() => import("./Basket.Item")),
 
   Basket = () => {
     return (
-      <div className="getir-header-basket">
+      <div className="market-header-basket">
         <BasketItem data={BasketItems} />
       </div>
     )

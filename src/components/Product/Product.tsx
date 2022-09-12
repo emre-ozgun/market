@@ -30,7 +30,7 @@ const ProductItem = React.lazy(() => import("./Product.Item")),
 
     return (
       <>
-        <Row className="getir-product">
+        <Row className="market-product">
           {
             data.slice(pagesVisited, pagesVisited + productPerPage).map((pItem: IProducts) => {
               return (
