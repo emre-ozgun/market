@@ -4,5 +4,6 @@ import Filter from "./Filter";
 import Page from "./Page";
 import Product from "./Product/Product";
 import Basket from "./Basket/Basket"
+import Tags from "./Tags";
 
-export { HistoryRouter, Filter, Page, Product, GlobalHelmet, Basket }
+export { HistoryRouter, Filter, Page, Product, GlobalHelmet, Basket, Tags }

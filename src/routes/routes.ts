@@ -1,5 +1,5 @@
-import { IRoute } from "@base/interfaces";
 import React from "react";
+import { IRoute } from "@base/interfaces";
 
 const Market = React.lazy(() => import("@pages/Market"))
 

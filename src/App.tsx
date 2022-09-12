@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
-import { Spin } from "antd";
 
+import { Spin } from "antd";
 import { IStore } from "@store/IStore";
 import { IRoute } from "@base/interfaces";
 import { getRouteConfig } from "@services/route.service";

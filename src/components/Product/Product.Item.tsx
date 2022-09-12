@@ -1,30 +1,24 @@
 import React from "react"
-import { useSelector } from "react-redux";
-import { Button, Card, Spin } from "antd";
-
-import { IStore } from "@store/IStore";
+import { Button, Card, Skeleton } from "antd";
 
 
 
 type ProductItemProps = {
   price: number;
   name: string;
+  loading: boolean;
 }
 
 const ProductCover = React.lazy(() => import("./Product.Cover")),
 
-  ProductItem = ({ price, name }: ProductItemProps) => {
+  ProductItem = ({ price, name, loading }: ProductItemProps) => {
 
-    const { loader } = useSelector((state: IStore) => ({
-      loader: state.system.loader
-    })),
-
-      addToBasket = () => {
-        console.log("ADD IS WORK");
-      }
+    const addToBasket = () => {
+      console.log("ADD IS WORK");
+    }
 
     return (
-      <Spin size="default" spinning={loader}>
+      <Skeleton loading={loading} active paragraph>
         <Card
           className="getir-product-item"
           cover={<ProductCover />}
@@ -32,7 +26,7 @@ const ProductCover = React.lazy(() => import("./Product.Cover")),
         >
           <Card.Meta title={`₺ ${price}`} description={name} />
         </Card>
-      </Spin>
+      </Skeleton>
 
     )
   }
