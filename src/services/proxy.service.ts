@@ -1,7 +1,7 @@
 /* eslint-disable no-async-promise-executor */
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
-import SystemActionCreators from "@base/lib/actionCreators/system/SystemActionCreators";
+import SystemActionCreators from "@store/lib/actionCreators/system/SystemActionCreators";
 import AppConfig from "../../environments/app";
 
 class ProxyService {

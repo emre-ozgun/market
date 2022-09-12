@@ -2,7 +2,7 @@ import React from "react"
 import { useSelector } from "react-redux"
 
 import { IStore } from "@store/IStore"
-import { currentProducts } from "@base/lib/selectors"
+import { currentProducts } from "@store/lib/selectors"
 
 import { Basket, Filter, Page, Product } from "@components/index"
 import { initialSortData } from "@components/Filter/data"
