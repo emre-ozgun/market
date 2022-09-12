@@ -11,7 +11,7 @@ const BasketEmpty = React.lazy(() => import("./Basket.Empty"));
 
 
 type BasketItemProps = {
-  data: IBasket[];
+  data?: IBasket[];
 }
 
 const BasketItem = ({ data }: BasketItemProps) => {

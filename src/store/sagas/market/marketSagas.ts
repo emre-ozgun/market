@@ -1,7 +1,7 @@
 import { call, put, all, takeEvery } from "redux-saga/effects";
 
 import { ICompanies, IProducts } from "@base/interfaces";
-import { GetCompanies, GetProducts } from "@base/apis";
+import { GetCompanies, GetProducts } from "@services/apis";
 
 import { MarketActions } from "@store/actions";
 import { MarketActionTypes } from "@store/types";
