@@ -1,10 +1,11 @@
 import React from "react"
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Button, List, Spin, Typography } from "antd";
 import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
 import { IStore } from "@store/IStore";
 import { Basket } from "@store/types";
+import { BasketActions } from "@store/actions";
 
 
 
@@ -16,12 +17,13 @@ const BasketEmpty = React.lazy(() => import("./Basket.Empty")),
 
   BasketItem = ({ data }: BasketItemProps) => {
 
-    const { loader } = useSelector((state: IStore) => ({
-      loader: state.system.loader
-    })),
+    const dispatch = useDispatch(),
+      { loader } = useSelector((state: IStore) => ({
+        loader: state.system.loader
+      })),
 
       addQuantity = () => {
-        console.log("ADD_QUATITY");
+        dispatch(BasketActions.addQuantityAction("Handcrafted Bear Mug"))
       },
 
       removeQuantity = () => {
@@ -42,7 +44,7 @@ const BasketEmpty = React.lazy(() => import("./Basket.Empty")),
               actions={[
                 <>
                   <Button type="default" htmlType="button" icon={<MinusOutlined />} onClick={addQuantity}></Button>
-                  <Typography.Text className="basket-item-quantity">5</Typography.Text>
+                  <Typography.Text className="basket-item-quantity">{item.quantity}</Typography.Text>
                   <Button type="default" htmlType="button" icon={<PlusOutlined />} onClick={removeQuantity}></Button>
                 </>
               ]}

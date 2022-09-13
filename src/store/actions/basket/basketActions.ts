@@ -1,6 +1,6 @@
 import { IProduct } from "@base/interfaces";
-import { IAddToBasketAction, IRemoveFromBasketAction } from "@store/models/basket";
-import { ADD_TO_BASKET, REMOVE_FROM_BASKET } from "@store/types";
+import { IAddQuantityAction, IAddToBasketAction, IMinusQuantityAction, IRemoveFromBasketAction } from "@store/models/basket";
+import { ADD_QUANTITY, ADD_TO_BASKET, MINUS_QUANTITY, REMOVE_FROM_BASKET } from "@store/types";
 
 const addToBasketAction = (product: IProduct): IAddToBasketAction => ({
   type: ADD_TO_BASKET,
@@ -10,9 +10,21 @@ const addToBasketAction = (product: IProduct): IAddToBasketAction => ({
   removeFromBasketAction = (name: string): IRemoveFromBasketAction => ({
     type: REMOVE_FROM_BASKET,
     name
+  }),
+
+  addQuantityAction = (id: string): IAddQuantityAction => ({
+    type: ADD_QUANTITY,
+    payload: id
+  }),
+
+  minusQuantityAction = (id: string): IMinusQuantityAction => ({
+    type: MINUS_QUANTITY,
+    payload: id
   });
 
 export const BasketActions = {
   addToBasketAction,
-  removeFromBasketAction
+  removeFromBasketAction,
+  addQuantityAction,
+  minusQuantityAction
 }

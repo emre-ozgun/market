@@ -11,6 +11,7 @@ interface IProduct {
   added: number | Date; // Date check.
   manufacturer: string;
   itemType: string;
+  quantity: number;
 }
 interface ICompanies {
   slug: string;
