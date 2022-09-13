@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 import React from "react"
 import { useSelector } from "react-redux";
 import { Pagination, Row, Skeleton } from "antd";
@@ -34,9 +33,8 @@ const Product = ({ data }: ProductProps) => {
         {
           data.slice(pagesVisited, pagesVisited + productPerPage).map((product: IProduct) => {
             return (
-              <Skeleton loading={loader} active paragraph>
+              <Skeleton loading={loader} active paragraph key={product.id}>
                 <ProductItem {...{
-                  key: product.id,
                   product
                 }} />
               </Skeleton>
