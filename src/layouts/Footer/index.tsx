@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer>
       <Typography.Paragraph>
-        ©2019 Marke • Privacy Policy
+        ©2019 Market • Privacy Policy
       </Typography.Paragraph>
     </footer>
   )

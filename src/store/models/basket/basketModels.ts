@@ -9,15 +9,15 @@ export interface IAddToBasketAction {
 
 export interface IRemoveFromBasketAction {
   type: typeof REMOVE_FROM_BASKET;
-  id: number;
+  id: string;
 }
 export interface IAddQuantityAction {
   type: typeof ADD_QUANTITY;
-  payload: number;
+  payload: string;
 }
 export interface IMinusQuantityAction {
   type: typeof MINUS_QUANTITY;
-  payload: number;
+  payload: string;
 }
 
 export type BasketActiontTypes = IAddToBasketAction | IRemoveFromBasketAction | IAddQuantityAction | IMinusQuantityAction;

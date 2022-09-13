@@ -4,7 +4,7 @@ import { Pagination, Row, Spin } from "antd";
 
 import { MarketActions } from "@store/actions";
 import { IProduct } from "@base/interfaces";
-import { productPerPage } from "@base/constants";
+import { pageSize, productPerPage } from "@base/constants";
 
 
 
@@ -20,7 +20,8 @@ const ProductItem = React.lazy(() => import("./Product.Item")),
       [pageNumber, setPageNumber] = React.useState<number>(0),
       pagesVisited = pageNumber * productPerPage,
 
-      onChangePage = (selected: number) => {
+      onPageChange = (selected: number) => {
+        console.log(selected);
         setPageNumber(selected)
       };
 
@@ -46,7 +47,7 @@ const ProductItem = React.lazy(() => import("./Product.Item")),
         </Row>
         {
           data && data.length > 0 &&
-          <Pagination pageSize={16} total={data.length} onChange={onChangePage} showSizeChanger={false} />
+          <Pagination pageSize={pageSize} total={data.length} onChange={onPageChange} showSizeChanger={false} />
         }
       </>
     )

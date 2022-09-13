@@ -7,17 +7,17 @@ const addToBasketAction = (product: IProduct): IAddToBasketAction => ({
   product
 }),
 
-  removeFromBasketAction = (id: number): IRemoveFromBasketAction => ({
+  removeFromBasketAction = (id: string): IRemoveFromBasketAction => ({
     type: REMOVE_FROM_BASKET,
     id
   }),
 
-  addQuantityAction = (id: number): IAddQuantityAction => ({
+  addQuantityAction = (id: string): IAddQuantityAction => ({
     type: ADD_QUANTITY,
     payload: id
   }),
 
-  minusQuantityAction = (id: number): IMinusQuantityAction => ({
+  minusQuantityAction = (id: string): IMinusQuantityAction => ({
     type: MINUS_QUANTITY,
     payload: id
   });

@@ -1,7 +1,9 @@
 const productPerPage = 16,
-  pageSize = 10;
+  pageSize = 16,
+  page = 1;
 
 export {
   productPerPage,
-  pageSize
+  pageSize,
+  page
 }
