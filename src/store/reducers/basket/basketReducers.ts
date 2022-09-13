@@ -7,12 +7,12 @@ export function basketReducers(state: Basket = initialState, action: BasketActio
 
   switch (action.type) {
     case ADD_TO_BASKET:
-      return state.some((product) => product.name === action.product.name) ? state : [...state, { ...action.product, quantity: 1 }];
+      return state.some((product) => product.id === action.product.id) ? state : [...state, { ...action.product, quantity: 1 }];
     case REMOVE_FROM_BASKET:
-      return state.filter((product) => product.name !== action.name);
+      return state.filter((product) => product.id !== action.id);
     case ADD_QUANTITY:
       return state.map((product) => {
-        if (product.name === action.payload) {
+        if (product.id === action.payload) {
           return {
             ...product,
             quantity: product.quantity + 1,
@@ -22,7 +22,7 @@ export function basketReducers(state: Basket = initialState, action: BasketActio
       });
     case MINUS_QUANTITY:
       return state.map((product) => {
-        if (product.name === action.payload) {
+        if (product.id === action.payload) {
           return {
             ...product,
             quantity: product.quantity - 1,

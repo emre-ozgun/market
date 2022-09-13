@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { Button, List, Spin, Typography } from "antd";
-import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
+import { DeleteOutlined, MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
 import { IStore } from "@store/IStore";
 import { BasketActions } from "@store/actions";
@@ -20,14 +20,13 @@ const BasketItem = ({ product }: BasketItemProps) => {
       loader: state.system.loader
     })),
 
-    addQuantity = () => {
-      dispatch(BasketActions.addQuantityAction(product.name))
-    },
+    { id } = product,
 
-    removeQuantity = () => {
-      console.log("REMOVE_QUATITY");
-    };
+    addQuantity = () => dispatch(BasketActions.addQuantityAction(id)),
 
+    minusQuantity = () => dispatch(BasketActions.minusQuantityAction(id)),
+
+    removeFromBasket = () => dispatch(BasketActions.removeFromBasketAction(id));
 
   return (
     <Spin size="default" spinning={loader}>
@@ -35,7 +34,7 @@ const BasketItem = ({ product }: BasketItemProps) => {
         <List.Item
           actions={[
             <>
-              <Button type="default" htmlType="button" icon={<MinusOutlined />} onClick={removeQuantity}></Button>
+              <Button type="default" htmlType="button" icon={product.quantity <= 1 ? <DeleteOutlined onClick={removeFromBasket} /> : <MinusOutlined />} onClick={minusQuantity}></Button>
               <Typography.Text className="basket-item-quantity">{product.quantity}</Typography.Text>
               <Button type="default" htmlType="button" icon={<PlusOutlined />} onClick={addQuantity}></Button>
             </>

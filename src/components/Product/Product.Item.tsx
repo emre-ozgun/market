@@ -18,9 +18,7 @@ const ProductCover = React.lazy(() => import("./Product.Cover")),
 
     const dispatch = useDispatch(),
 
-      addToBasket = () => {
-        dispatch(BasketActions.addToBasketAction(product));
-      }
+      addToBasket = () => dispatch(BasketActions.addToBasketAction(product));
 
     return (
       <Skeleton loading={loading} active paragraph>
