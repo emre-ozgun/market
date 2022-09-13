@@ -1,26 +1,40 @@
 import React from "react"
-import { Spin } from "antd";
+import { Spin, Typography } from "antd";
 
-import { Basket as BBasket } from "@store/types";
+import { IProduct } from "@base/interfaces";
 
 
 
 type BasketProps = {
-  data: BBasket;
+  product: IProduct[];
   loading?: boolean;
 }
 
 const BasketItem = React.lazy(() => import("./Basket.Item")),
+  BasketEmpty = React.lazy(() => import("./Basket.Empty")),
 
-  Basket = ({ data, loading }: BasketProps) => {
+  Basket = ({ product, loading }: BasketProps) => {
     return (
       <div className="market-header-basket">
-        <React.Suspense fallback={<Spin size="default" spinning={loading} />}>
-          <BasketItem {...{
-            data,
-            loading
-          }} />
-        </React.Suspense>
+        {
+          product && product.length > 0 ? product.map((item) => {
+            return (
+              <React.Suspense fallback={<Spin size="default" spinning={loading} />} key={item.id}>
+                <BasketItem {...{
+                  product: item,
+                  loading
+                }} />
+              </React.Suspense>
+            )
+          }) : <BasketEmpty />
+        }
+        {
+          product && product.length > 0 && (
+            <div className="basket-total">
+              <Typography.Text>₺ 39,97</Typography.Text>
+            </div>
+          )
+        }
       </div>
     )
   }

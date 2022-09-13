@@ -30,7 +30,7 @@ const Market = () => {
       <Page title="Products" className="page">
         <Product data={products} loading={loader} />
       </Page>
-      <Basket data={basket} />
+      <Basket product={basket} />
     </Content>
   )
 }

@@ -4,60 +4,51 @@ import { Button, List, Spin, Typography } from "antd";
 import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
 
 import { IStore } from "@store/IStore";
-import { Basket } from "@store/types";
 import { BasketActions } from "@store/actions";
+import { IProduct } from "@base/interfaces";
 
 
 
 type BasketItemProps = {
-  data: Basket;
+  product: IProduct;
 }
 
-const BasketEmpty = React.lazy(() => import("./Basket.Empty")),
+const BasketItem = ({ product }: BasketItemProps) => {
 
-  BasketItem = ({ data }: BasketItemProps) => {
+  const dispatch = useDispatch(),
+    { loader } = useSelector((state: IStore) => ({
+      loader: state.system.loader
+    })),
 
-    const dispatch = useDispatch(),
-      { loader } = useSelector((state: IStore) => ({
-        loader: state.system.loader
-      })),
+    addQuantity = () => {
+      dispatch(BasketActions.addQuantityAction(product.name))
+    },
 
-      addQuantity = () => {
-        dispatch(BasketActions.addQuantityAction("Handcrafted Bear Mug"))
-      },
-
-      removeQuantity = () => {
-        console.log("REMOVE_QUATITY");
-      };
+    removeQuantity = () => {
+      console.log("REMOVE_QUATITY");
+    };
 
 
-    return (
-      <Spin size="default" spinning={loader}>
-        <List
-          locale={{ emptyText: <BasketEmpty /> }}
-          dataSource={data}
-          footer={[
-            data && <Typography.Text key="basket-total">₺ 39,97</Typography.Text>
+  return (
+    <Spin size="default" spinning={loader}>
+      <List>
+        <List.Item
+          actions={[
+            <>
+              <Button type="default" htmlType="button" icon={<MinusOutlined />} onClick={removeQuantity}></Button>
+              <Typography.Text className="basket-item-quantity">{product.quantity}</Typography.Text>
+              <Button type="default" htmlType="button" icon={<PlusOutlined />} onClick={addQuantity}></Button>
+            </>
           ]}
-          renderItem={(item) => (
-            <List.Item
-              actions={[
-                <>
-                  <Button type="default" htmlType="button" icon={<MinusOutlined />} onClick={addQuantity}></Button>
-                  <Typography.Text className="basket-item-quantity">{item.quantity}</Typography.Text>
-                  <Button type="default" htmlType="button" icon={<PlusOutlined />} onClick={removeQuantity}></Button>
-                </>
-              ]}
-            >
-              <List.Item.Meta
-                title={item.name}
-                description={item.price}
-              />
-            </List.Item>
-          )}
-        />
-      </Spin>
-    )
-  }
+        >
+          <List.Item.Meta
+            title={product.name}
+            description={product.price}
+          />
+        </List.Item>
+      </List>
+    </Spin>
+  )
+}
 
 export default BasketItem;
