@@ -2,6 +2,7 @@ interface ITags {
   tags: any;
 }
 interface IProduct {
+  id: number;
   tags: ITags;
   price: number;
   name: string;
