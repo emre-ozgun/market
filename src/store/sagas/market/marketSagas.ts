@@ -1,6 +1,6 @@
 import { call, put, all, takeEvery } from "redux-saga/effects";
 
-import { ICompanies, IProducts } from "@base/interfaces";
+import { ICompanies, IProduct } from "@base/interfaces";
 import { GetCompanies, GetProducts } from "@services/apis";
 
 import { MarketActions } from "@store/actions";
@@ -19,7 +19,7 @@ function* watchMarket() {
 
 function* getProducts() {
   try {
-    const response: IProducts[] = yield call(GetProducts);
+    const response: IProduct[] = yield call(GetProducts);
     if (response) {
       yield put(MarketActions.setProductsAction(response));
     }

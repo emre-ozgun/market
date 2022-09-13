@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { Pagination, Row, Spin } from "antd";
 
 import { MarketActions } from "@store/actions";
-import { IProducts } from "@base/interfaces";
+import { IProduct } from "@base/interfaces";
 import { productPerPage } from "@base/constants";
 
 
 
 type ProductProps = {
-  data: IProducts[];
+  data: IProduct[];
   loading: boolean;
 }
 
@@ -32,10 +32,13 @@ const ProductItem = React.lazy(() => import("./Product.Item")),
       <>
         <Row className="market-product">
           {
-            data.slice(pagesVisited, pagesVisited + productPerPage).map((pItem: IProducts) => {
+            data.slice(pagesVisited, pagesVisited + productPerPage).map((pItem: IProduct) => {
               return (
                 <React.Suspense fallback={<Spin size="default" spinning={loading} />} key={`${pItem.name}_${Math.random()}`}>
-                  <ProductItem price={pItem.price} name={pItem.name} loading={loading} />
+                  <ProductItem {...{
+                    product: pItem,
+                    loading
+                  }} />
                 </React.Suspense>
               )
             })

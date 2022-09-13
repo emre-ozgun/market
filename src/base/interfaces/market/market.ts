@@ -1,7 +1,7 @@
 interface ITags {
   tags: any;
 }
-interface IProducts {
+interface IProduct {
   tags: ITags;
   price: number;
   name: string;
@@ -26,12 +26,12 @@ interface IBasket {
   price: string;
 }
 interface IMarket {
-  products: IProducts[];
+  products: IProduct[];
   companies: ICompanies[];
 }
 
 export {
-  IProducts,
+  IProduct,
   ICompanies,
   IBasket,
   IMarket,

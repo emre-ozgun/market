@@ -1,21 +1,25 @@
 import React from "react"
 import { Button, Card, Skeleton } from "antd";
+import { useDispatch } from "react-redux";
+import { BasketActions } from "@store/actions";
+import { IProduct } from "@base/interfaces";
 
 
 
 type ProductItemProps = {
-  price: number;
-  name: string;
+  product: IProduct;
   loading: boolean;
 }
 
 const ProductCover = React.lazy(() => import("./Product.Cover")),
 
-  ProductItem = ({ price, name, loading }: ProductItemProps) => {
+  ProductItem = ({ product, loading }: ProductItemProps) => {
 
-    const addToBasket = () => {
-      console.log("ADD IS WORK");
-    }
+    const dispatch = useDispatch(),
+
+      addToBasket = () => {
+        dispatch(BasketActions.addToBasketAction(product));
+      }
 
     return (
       <Skeleton loading={loading} active paragraph>
@@ -24,7 +28,7 @@ const ProductCover = React.lazy(() => import("./Product.Cover")),
           cover={<ProductCover />}
           actions={[<Button key="add-to-basket" htmlType="button" type="primary" block onClick={addToBasket}>Add</Button>]}
         >
-          <Card.Meta title={`₺ ${price}`} description={name} />
+          <Card.Meta title={`₺ ${product.price}`} description={product.name} />
         </Card>
       </Skeleton>
 

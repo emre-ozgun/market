@@ -1,4 +1,4 @@
-import { ICompanies, IProducts } from "@base/interfaces";
+import { ICompanies, IProduct } from "@base/interfaces";
 import { IMarketActions } from "@store/models/market";
 import { MarketActionTypes } from "@store/types";
 
@@ -6,7 +6,7 @@ const getProductsAction = (): IMarketActions => ({
   type: MarketActionTypes.GET_PRODUCTS
 }),
 
-  setProductsAction = (products: IProducts[]): IMarketActions => ({
+  setProductsAction = (products: IProduct[]): IMarketActions => ({
     type: MarketActionTypes.SET_PRODUCTS,
     payload: { products }
   }),
