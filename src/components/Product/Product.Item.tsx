@@ -1,37 +1,45 @@
 import React from "react"
-import { Button, Card, Skeleton } from "antd";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Card } from "antd";
 
+import { IStore } from "@store/IStore";
+import { currentBasket } from "@store/lib/selectors";
 import { BasketActions } from "@store/actions";
 import { IProduct } from "@base/interfaces";
+
+import ProductCover from "./Product.Cover";
 
 
 
 type ProductItemProps = {
   product: IProduct;
-  loading: boolean;
 }
 
-const ProductCover = React.lazy(() => import("./Product.Cover")),
+const ProductItem = ({ product }: ProductItemProps) => {
 
-  ProductItem = ({ product, loading }: ProductItemProps) => {
+  const dispatch = useDispatch(),
+    { basket } = useSelector((state: IStore) => ({
+      basket: currentBasket(state)
+    })),
 
-    const dispatch = useDispatch(),
+    addToBasket = () => dispatch(BasketActions.addToBasketAction(product)),
 
-      addToBasket = () => dispatch(BasketActions.addToBasketAction(product));
+    foundItemOnBasket = basket.some((item: { id: string }) => item.id === product.id);
 
-    return (
-      <Skeleton loading={loading} active paragraph>
-        <Card
-          className="market-product-item"
-          cover={<ProductCover />}
-          actions={[<Button key="add-to-basket" htmlType="button" type="primary" block onClick={addToBasket}>Add</Button>]}
-        >
-          <Card.Meta title={`₺ ${product.price}`} description={product.name} />
-        </Card>
-      </Skeleton>
+  return (
+    <Card
+      className="market-product-item"
+      cover={<ProductCover />}
+      actions={[
+        <Button disabled={foundItemOnBasket} key="add-to-basket" htmlType="button" type="primary" block onClick={addToBasket}>
+          Add
+        </Button>
+      ]}
+    >
+      <Card.Meta title={`₺ ${product.price}`} description={product.name} />
+    </Card>
 
-    )
-  }
+  )
+}
 
 export default ProductItem;
