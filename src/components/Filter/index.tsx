@@ -12,8 +12,8 @@ type FilterProps = {
 
 const Filter = ({ filters }: FilterProps) => {
 
-  const onFilterChange = () => {
-    console.log("CHANGED FILTER");
+  const onFilterChange = (e: any) => {
+    console.log("CHANGED FILTER", e);
   }
 
   return (
@@ -68,8 +68,8 @@ const Filter = ({ filters }: FilterProps) => {
                             dataSource={Object.values(filterItem.items)}
                             renderItem={(item) => (
                               <List.Item key={`${item.name}_${Math.random()}`}>
-                                <Checkbox onChange={onFilterChange}>
-                                  {item.name}{`(${item.count})`}
+                                <Checkbox onChange={(e) => onFilterChange(e.target.value)} value={item.name}>
+                                  {item.name} {`(${item.count})`}
                                 </Checkbox>
                               </List.Item>
                             )}

@@ -36,7 +36,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
         </Button>
       ]}
     >
-      <Card.Meta title={`₺ ${product.price}`} description={product.name} />
+      <Card.Meta title={`₺ ${product.price.toString().replace(".", ",")}`} description={product.name} />
     </Card>
 
   )

@@ -42,7 +42,7 @@ const BasketItem = ({ product }: BasketItemProps) => {
         >
           <List.Item.Meta
             title={product.name}
-            description={product.price}
+            description={`₺${product.price.toString().replace(".", ",")}`}
           />
         </List.Item>
       </List>
