@@ -68,21 +68,6 @@ class ProxyService {
     this.addApiQueue(url);
     return this.service.get(url);
   }
-
-  post = (url: string, body?: any): any => {
-    this.addApiQueue(url);
-    return this.service.post(url, body);
-  }
-
-  put = (url: string, body: any): any => {
-    this.addApiQueue(url);
-    return this.service.put(url, body);
-  }
-
-  delete = (url: string, body: any): any => {
-    this.addApiQueue(url);
-    return this.service.delete(url, body);
-  }
 }
 
 export default new ProxyService();

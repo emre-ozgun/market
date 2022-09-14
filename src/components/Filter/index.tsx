@@ -22,7 +22,7 @@ const Filter = ({ filters }: FilterProps) => {
         filters && filters.length > 0 && filters.map((filterItem: IFilter) => {
           return (
             filterItem && (
-              <Col xs={24} md={24} key={filterItem.label}>
+              <Col xs={24} md={24} key={filterItem.name}>
                 {
                   filterItem.type === filterTypes.radio && (
                     <Col xs={24} md={24} className={`filter-sorting-radio ${filterItem.className}`}>
@@ -64,17 +64,12 @@ const Filter = ({ filters }: FilterProps) => {
                             className={filterItem.className}
                             value={filterItem.value}
                           />
-                          <Checkbox onChange={onFilterChange} className="checkbox-check-all">
-                            <Typography.Text>
-                              {`All (${filterItem.items.length})`}
-                            </Typography.Text>
-                          </Checkbox>
                           <List
                             dataSource={Object.values(filterItem.items)}
                             renderItem={(item) => (
-                              <List.Item key={item.id}>
+                              <List.Item key={`${item.name}_${Math.random()}`}>
                                 <Checkbox onChange={onFilterChange}>
-                                  {item.value}
+                                  {item.name}{`(${item.count})`}
                                 </Checkbox>
                               </List.Item>
                             )}
