@@ -2,7 +2,7 @@ import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import { IStore } from "@store/IStore"
-import { FilterActions, MarketActions } from "@store/actions"
+import { LookupActions, MarketActions } from "@store/actions"
 import { currentBasket, currentBrands, currentProducts, currentTags } from "@store/lib/selectors"
 
 import { Basket, Filter, Page, Product } from "@components/index"
@@ -30,8 +30,8 @@ const Market = () => {
 
   React.useEffect(() => {
     dispatch(MarketActions.getProductsAction());
-    dispatch(FilterActions.getBrandsAction());
-    dispatch(FilterActions.getTagsAction());
+    dispatch(LookupActions.getBrandsAction());
+    dispatch(LookupActions.getTagsAction());
   }, []);
 
   return (

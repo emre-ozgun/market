@@ -36,6 +36,5 @@ export {
   IProduct,
   ICompanies,
   IBasket,
-  IMarket,
-  ITags
+  IMarket
 }

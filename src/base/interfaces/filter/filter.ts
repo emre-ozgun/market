@@ -16,21 +16,7 @@ interface IFilter {
   value?: string;
   loading?: boolean;
 }
-interface ITags {
-  count: number;
-  name: string;
-}
-interface IBrands {
-  count: number;
-  name: string;
-}
-interface IFilterState {
-  tags: ITags[];
-  brands: IBrands[];
-}
+
 export {
-  IFilter,
-  ITags,
-  IBrands,
-  IFilterState
+  IFilter
 }

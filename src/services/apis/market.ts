@@ -7,14 +7,6 @@ const GetProducts = () => {
 
   GetCompanies = () => {
     return ProxyService.get(Market.Companies);
-  },
-
-  GetTags = () => {
-    return ProxyService.get(Market.Tags);
-  },
-
-  GetBrands = () => {
-    return ProxyService.get(Market.Brands);
   };
 
-export { GetProducts, GetCompanies, GetTags, GetBrands }
+export { GetProducts, GetCompanies }
