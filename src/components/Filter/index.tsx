@@ -97,6 +97,7 @@ const Filter = ({ filters }: FilterProps) => {
                             onChange={(e: any) => setSearchedBrand(e.currentTarget.value)}
                           />
                           <List
+                            locale={{ emptyText: "No results matched your search." }}
                             dataSource={filterItem.items.filter((brandItem) => brandItem.name.toString().toLowerCase().indexOf(searchedBrand.toString().toLowerCase()) > -1)}
                             renderItem={(item) => (
                               <List.Item key={item.id}>
@@ -127,6 +128,7 @@ const Filter = ({ filters }: FilterProps) => {
                             onChange={(e: any) => setSearchedTag(e.currentTarget.value)}
                           />
                           <List
+                            locale={{ emptyText: "No results matched your search." }}
                             dataSource={filterItem.items.filter((tagItem) => tagItem.name.toString().toLowerCase().indexOf(searchedTag.toString().toLowerCase()) > -1)}
                             renderItem={(item) => (
                               <List.Item key={item.id}>
