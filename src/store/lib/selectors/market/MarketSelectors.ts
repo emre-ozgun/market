@@ -43,8 +43,10 @@ const productItemsSelector = (state: IStore) => state.market.products,
             return a.price - b.price;
           case "price-desc":
             return b.price - a.price;
+          case "date-desc":
+            return new Date(b.added).valueOf() - new Date(a.added).valueOf();
           default:
-            return b.price - a.price;
+            return new Date(a.added).valueOf() - new Date(b.added).valueOf();
         }
       });
     },
