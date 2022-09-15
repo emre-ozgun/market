@@ -22,10 +22,7 @@ const Product = ({ data }: ProductProps) => {
     [pageNumber, setPageNumber] = React.useState<number>(0),
     pagesVisited = pageNumber * productPerPage,
 
-    onPageChange = (selected: number) => {
-      console.log(selected);
-      setPageNumber(selected)
-    };
+    onPageChange = (selected: number) => setPageNumber(selected);
 
   return (
     <>

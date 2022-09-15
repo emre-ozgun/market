@@ -5,5 +5,5 @@ const productPerPage = 16,
 export {
   productPerPage,
   pageSize,
-  page
+  page,
 }

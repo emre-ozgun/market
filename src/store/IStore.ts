@@ -1,4 +1,4 @@
-import { ILookups, IMarket, ISystem } from "@base/interfaces";
+import { IFilterState, ILookups, IMarket, ISystem } from "@base/interfaces";
 import { Basket } from "./types";
 
 export interface IStore {
@@ -6,4 +6,5 @@ export interface IStore {
   system: ISystem;
   basket: Basket;
   lookups: ILookups;
+  filter: IFilterState;
 }

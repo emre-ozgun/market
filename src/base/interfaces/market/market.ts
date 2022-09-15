@@ -1,9 +1,6 @@
-interface ITags {
-  tags: any;
-}
 interface IProduct {
   id: string;
-  tags: ITags;
+  tags: string[];
   price: number;
   name: string;
   description: string;
