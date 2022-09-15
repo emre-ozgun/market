@@ -3,27 +3,30 @@
 import React from "react"
 import { Tag } from "antd"
 
-import { ITags } from "@base/interfaces"
-
 
 
 type TagProps = {
-  data: ITags[]
+  data: any[];
+  setSelectedTags: (a: any, b: any) => void;
 }
-const Tags = ({ data }: TagProps) => {
+
+const Tags = ({ data, setSelectedTags }: TagProps) => {
 
   return (
-    <>
+    <div className="market-item-types">
       {
         data.map(tagItem => {
           return (
-            <Tag key={tagItem.name}>
+            <Tag.CheckableTag key={Math.random()}
+              checked={data.indexOf(tagItem) > -1}
+              onChange={(checked) => setSelectedTags(tagItem, checked)}
+            >
               {tagItem.name}
-            </Tag>
+            </Tag.CheckableTag>
           )
         })
       }
-    </>
+    </div>
   )
 }
 

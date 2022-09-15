@@ -1,5 +1,4 @@
 // Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
-// See LICENSE.txt for license information.
 
 import React from "react"
 import { useSelector } from "react-redux";
@@ -10,6 +9,8 @@ import { IProduct } from "@base/interfaces";
 import { pageSize, productPerPage } from "@base/constants";
 
 import ProductItem from "./Product.Item";
+import { Tags } from "..";
+import { initialItemTypes } from "@components/Tags/data";
 
 
 
@@ -23,12 +24,19 @@ const Product = ({ data }: ProductProps) => {
     loader: state.system.loader
   })),
     [pageNumber, setPageNumber] = React.useState<number>(0),
+    [selectedTags, setSelectedTags] = React.useState(initialItemTypes),
     pagesVisited = pageNumber * productPerPage,
 
-    onPageChange = (selected: number) => setPageNumber(selected);
+    onPageChange = (selected: number) => setPageNumber(selected),
+
+    onChangeTags = (tag: any, checked: boolean) => {
+      const nextSelectedTags = checked ? [...selectedTags, tag] : selectedTags.filter((t) => t !== tag);
+      setSelectedTags(nextSelectedTags);
+    };
 
   return (
     <>
+      <Tags data={initialItemTypes} setSelectedTags={onChangeTags} />
       <Row className="market-product">
         {
           data.slice(pagesVisited, pagesVisited + productPerPage).map((product: IProduct) => {
