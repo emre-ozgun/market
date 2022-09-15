@@ -5,7 +5,7 @@ import { useSelector, useDispatch, shallowEqual } from "react-redux"
 
 import { IStore } from "@store/IStore"
 import { LookupActions, MarketActions } from "@store/actions"
-import { currentBasket, currentBrands, currentTags, getProduct } from "@store/lib/selectors"
+import { getBasket, getBrands, getTags, getProduct } from "@store/lib/selectors"
 
 import { Basket, Filter, Page, Product } from "@components/index"
 import { initialSortData } from "@components/Filter/data"
@@ -18,9 +18,9 @@ const Market = () => {
   const dispatch = useDispatch(),
     { loader, basket, tags, brands } = useSelector((state: IStore) => ({
       loader: state.system.loader,
-      basket: currentBasket(state),
-      tags: currentTags(state),
-      brands: currentBrands(state)
+      basket: getBasket(state),
+      tags: getTags(state),
+      brands: getBrands(state)
     })),
 
     { products } = useSelector(getProduct, shallowEqual),

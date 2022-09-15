@@ -32,7 +32,7 @@ const BasketItem = React.lazy(() => import("./Basket.Item")),
         }) : <BasketEmpty />}
         {product && product.length > 0 && (
           <React.Suspense fallback={<Spin size="default" spinning={loading} />}>
-            <BasketTotal {...{ product }} />
+            <BasketTotal />
           </React.Suspense>
         )}
       </div>

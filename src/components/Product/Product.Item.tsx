@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Button, Card } from "antd";
 
 import { IStore } from "@store/IStore";
-import { currentBasket } from "@store/lib/selectors";
+import { getBasket } from "@store/lib/selectors";
 import { BasketActions } from "@store/actions";
 import { IProduct } from "@base/interfaces";
 
@@ -21,7 +21,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
 
   const dispatch = useDispatch(),
     { basket } = useSelector((state: IStore) => ({
-      basket: currentBasket(state)
+      basket: getBasket(state)
     })),
 
     addToBasket = () => dispatch(BasketActions.addToBasketAction(product)),

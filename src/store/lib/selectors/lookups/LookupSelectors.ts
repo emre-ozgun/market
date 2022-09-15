@@ -5,16 +5,16 @@ import { createSelector } from "reselect";
 import { IStore } from "@store/IStore";
 import { ILookups } from "@base/interfaces";
 
-const currentTags = createSelector(
+const getTags = createSelector(
   (state: IStore) => state.lookups,
   (lookups: ILookups) => lookups.tags
 ),
 
-  currentBrands = createSelector(
+  getBrands = createSelector(
     (state: IStore) => state.lookups,
     (lookups: ILookups) => lookups.brands
   );
 export {
-  currentTags,
-  currentBrands
+  getTags,
+  getBrands
 }

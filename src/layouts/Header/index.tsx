@@ -4,7 +4,7 @@ import { ReactSVG } from "react-svg";
 import { Col, Layout, Row, Tooltip, Typography } from "antd";
 
 import { IStore } from "@store/IStore";
-import { currentBasket } from "@store/lib/selectors";
+import { getBasket } from "@store/lib/selectors";
 import { sumByBasket } from "@components/Basket/container";
 
 
@@ -16,7 +16,7 @@ const marketIcon = require("@assets/images/market.svg") as string,
   Header = () => {
 
     const { basket } = useSelector((state: IStore) => ({
-      basket: currentBasket(state)
+      basket: getBasket(state)
     }));
 
     return (
