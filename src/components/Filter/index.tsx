@@ -2,11 +2,11 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { Checkbox, Col, Input, List, Radio, Skeleton, Space, Typography } from "antd";
 
+import { IStore } from "@store/IStore";
+import { productOrderBySelector } from "@store/lib/selectors";
 import { FilterActions } from "@store/actions";
 import { IFilter } from "@base/interfaces";
 import { filterTypes } from "./types";
-import { IStore } from "@store/IStore";
-import { productOrderBySelector } from "@store/lib/selectors";
 
 
 
