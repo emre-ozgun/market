@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import ConfigStore from "@store/ConfigStore"
 import { SystemActions } from "@store/actions"
 

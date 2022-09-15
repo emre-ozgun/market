@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { IMarket } from "@base/interfaces";
 import { IMarketActions } from "@store/models/market";
 import { MarketActionTypes } from "@store/types";

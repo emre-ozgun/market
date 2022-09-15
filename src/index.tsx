@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";

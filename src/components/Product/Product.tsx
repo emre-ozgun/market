@@ -1,3 +1,6 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+// See LICENSE.txt for license information.
+
 import React from "react"
 import { useSelector } from "react-redux";
 import { Pagination, Row, Skeleton } from "antd";

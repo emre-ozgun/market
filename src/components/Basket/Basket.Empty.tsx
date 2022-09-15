@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import React from "react"
 import { ReactSVG } from "react-svg";
 import { Typography } from "antd";

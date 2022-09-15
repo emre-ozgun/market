@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { LocalStorageKeys } from "@base/enums";
 import { ISystem } from "@base/interfaces";
 import { LocalStorageService } from "./localStorage.service";

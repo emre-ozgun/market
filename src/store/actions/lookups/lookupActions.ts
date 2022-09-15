@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { ITags, IBrands } from "@base/interfaces";
 import { ILookupActions } from "@store/models/lookups/lookupModels";
 import { LookupActionTypes } from "@store/types";

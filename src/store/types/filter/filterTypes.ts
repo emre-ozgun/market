@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 export const ADD_FILTER_BY_TAG = "ADD_FILTER_BY_TAG";
 export const REMOVE_FILTER_BY_TAG = "REMOVE_FILTER_BY_TAG";
 

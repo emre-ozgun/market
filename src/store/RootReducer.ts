@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { combineReducers, Reducer, CombinedState } from "redux";
 
 import { IStore } from "./IStore";

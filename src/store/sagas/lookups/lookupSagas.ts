@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { call, put, all, takeEvery } from "redux-saga/effects";
 
 import { IBrands, ITags } from "@base/interfaces";

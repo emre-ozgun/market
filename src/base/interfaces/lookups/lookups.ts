@@ -1,3 +1,4 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
 interface ITags {
   count: number;
   name: string;

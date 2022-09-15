@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import React from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { Button, List, Spin, Typography } from "antd";

@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 /* eslint-disable no-async-promise-executor */
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 

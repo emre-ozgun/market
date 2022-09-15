@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 type TTheme = "dark" | "light";
 
 type TDirection = "ltr" | "rtl";

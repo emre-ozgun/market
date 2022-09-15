@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Card } from "antd";

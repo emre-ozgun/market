@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { BasketActiontTypes } from "@store/models/basket";
 import { ADD_QUANTITY, ADD_TO_BASKET, Basket, MINUS_QUANTITY, REMOVE_FROM_BASKET } from "@store/types";
 

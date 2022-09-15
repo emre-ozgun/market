@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { createStore, applyMiddleware, Middleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
 

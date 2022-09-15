@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import { ISystem } from "@base/interfaces";
 import { SystemService } from "@services/system.service";
 import { ISystemActions } from "@store/models/system/systemModels";

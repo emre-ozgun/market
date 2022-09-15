@@ -1,3 +1,5 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import React from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { Checkbox, Col, Input, List, Radio, Skeleton, Space, Typography } from "antd";
@@ -102,7 +104,7 @@ const Filter = ({ filters }: FilterProps) => {
                             renderItem={(item) => (
                               <List.Item key={item.id}>
                                 <Checkbox onChange={onChangeFilterBrand} name={item.name}>
-                                  {item.name} {`(${item.count})`}
+                                  {item.name} <Typography.Text className="filter-count">{`(${item.count})`}</Typography.Text>
                                 </Checkbox>
                               </List.Item>
                             )}
@@ -133,7 +135,7 @@ const Filter = ({ filters }: FilterProps) => {
                             renderItem={(item) => (
                               <List.Item key={item.id}>
                                 <Checkbox onChange={onChangeFilterTag} name={item.name}>
-                                  {item.name} {`(${item.count})`}
+                                  {item.name} <Typography.Text className="filter-count">{`(${item.count})`}</Typography.Text>
                                 </Checkbox>
                               </List.Item>
                             )}
