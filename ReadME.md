@@ -1,6 +1,6 @@
 # Getir Challange w/ Interview
 
-[![N|Solid](https://i.ibb.co/hC1rQPy/icons8-typescript-48.png)](https://www.typescriptlang.org/) [![N|Solid](https://i.ibb.co/mNkY6yf/icons8-eslint-48.png)](https://typescript-eslint.io/) [![N|Solid](https://i.ibb.co/7YFFYkt/webpack-icon.png)](https://webpack.js.org/) [![N|Solid](https://i.ibb.co/YjPn6Mn/11490474241551942136-48.png)](https://prettier.io/) [![N|Solid](https://i.ibb.co/smcF3NT/KDpgvgu-Mp-Gfqa-HPjic-RK-1.png)](https://ant.design/) [![N|Solid](https://i.ibb.co/pyCGrZQ/371510-1.png)](https://storybook.js.org/) [![N|Solid](https://i.ibb.co/SPPrKZB/jest.png)](https://jestjs.io/) [![N|Solid](https://i.ibb.co/VpqKjr7/babel-1.png)](https://babeljs.io/) [![N|Solid](https://i.ibb.co/RY9TYjH/371673-1.png)](https://yarnpkg.com/)
+[![N|Solid](https://i.ibb.co/hC1rQPy/icons8-typescript-48.png)](https://www.typescriptlang.org/) [![N|Solid](https://i.ibb.co/mNkY6yf/icons8-eslint-48.png)](https://typescript-eslint.io/) [![N|Solid](https://i.ibb.co/7YFFYkt/webpack-icon.png)](https://webpack.js.org/) [![N|Solid](https://i.ibb.co/YjPn6Mn/11490474241551942136-48.png)](https://prettier.io/) [![N|Solid](https://i.ibb.co/smcF3NT/KDpgvgu-Mp-Gfqa-HPjic-RK-1.png)](https://ant.design/) [![N|Solid](https://i.ibb.co/SPPrKZB/jest.png)](https://jestjs.io/) [![N|Solid](https://i.ibb.co/VpqKjr7/babel-1.png)](https://babeljs.io/) [![N|Solid](https://i.ibb.co/RY9TYjH/371673-1.png)](https://yarnpkg.com/)
 
 ## Installing
 
