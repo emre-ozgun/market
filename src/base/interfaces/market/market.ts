@@ -5,7 +5,7 @@ interface IProduct {
   name: string;
   description: string;
   slug: string;
-  added: number | Date; // Date check.
+  added: any;
   manufacturer: string;
   itemType: string;
   quantity: number;

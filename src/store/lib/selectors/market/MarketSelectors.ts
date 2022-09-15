@@ -39,7 +39,7 @@ const productItemsSelector = (state: IStore) => state.market.products,
           case "price-desc":
             return b.price - a.price;
           default:
-            return a.price - b.price;
+            return b.price - a.price;
         }
       });
     },
@@ -53,5 +53,6 @@ const productItemsSelector = (state: IStore) => state.market.products,
   );
 
 export {
-  getProduct
+  getProduct,
+  productOrderBySelector
 }

@@ -3,14 +3,15 @@ import { TFilters } from "@base/types";
 interface IFilterItems {
   id: string | number;
   value: string | number;
-  length?: number;
+  name: string;
+  count: number;
 }
 interface IFilter {
   type: TFilters;
   name: string;
   label: string;
   count: number;
-  items: IFilterItems | IFilterItems[];
+  items: IFilterItems[];
   className?: string;
   placeholder?: string;
   value?: string;

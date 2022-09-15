@@ -1,10 +1,13 @@
 import React from "react"
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Checkbox, Col, Input, List, Radio, Skeleton, Space, Typography } from "antd";
 
 import { FilterActions } from "@store/actions";
 import { IFilter } from "@base/interfaces";
 import { filterTypes } from "./types";
+import { IStore } from "@store/IStore";
+import { productOrderBySelector } from "@store/lib/selectors";
+
 
 
 
@@ -15,6 +18,11 @@ type FilterProps = {
 const Filter = ({ filters }: FilterProps) => {
 
   const dispatch = useDispatch(),
+    { orderBy } = useSelector((state: IStore) => ({
+      orderBy: productOrderBySelector(state),
+    })),
+    [searchedBrand, setSearchedBrand] = React.useState<string>(""),
+    [searchedTag, setSearchedTag] = React.useState<string>(""),
 
     onChangeFilterBrand = (e: any) => {
       const { checked, name } = e.target;
@@ -36,7 +44,9 @@ const Filter = ({ filters }: FilterProps) => {
         dispatch(FilterActions.removeFilterByTagAction(name));
       }
 
-    }
+    },
+
+    onChangeOrderByFilter = (e: any) => dispatch(FilterActions.setOrderByAction(e.target.value));
 
   return (
     <Col xs={24} md={24} className="filter">
@@ -53,13 +63,13 @@ const Filter = ({ filters }: FilterProps) => {
                       </Typography.Paragraph>
                       <Col xs={24} md={24}>
                         <Skeleton loading={filterItem.loading} active paragraph>
-                          <Radio.Group>
+                          <Radio.Group value={orderBy} onChange={onChangeOrderByFilter} >
                             <Space direction="vertical">
                               {
-                                filterItem.items && Object.values(filterItem.items).map(({ id, value }) => {
+                                filterItem.items && Object.values(filterItem.items).map(({ id, name, value }) => {
                                   return (
-                                    <Radio key={id} value={id}>
-                                      {value}
+                                    <Radio key={id} value={value}>
+                                      {name}
                                     </Radio>
                                   )
                                 })
@@ -82,14 +92,14 @@ const Filter = ({ filters }: FilterProps) => {
                         <Skeleton loading={filterItem.loading} active paragraph>
                           <Input
                             placeholder={`Search ${filterItem.label}`}
-                            onChange={(e) => console.log(e)}
                             className={filterItem.className}
-                            value={filterItem.value}
+                            value={searchedBrand}
+                            onChange={(e: any) => setSearchedBrand(e.currentTarget.value)}
                           />
                           <List
-                            dataSource={Object.values(filterItem.items)}
+                            dataSource={filterItem.items.filter((brandItem) => brandItem.name.toString().toLowerCase().indexOf(searchedBrand.toString().toLowerCase()) > -1)}
                             renderItem={(item) => (
-                              <List.Item key={item.name}>
+                              <List.Item key={item.id}>
                                 <Checkbox onChange={onChangeFilterBrand} name={item.name}>
                                   {item.name} {`(${item.count})`}
                                 </Checkbox>
@@ -112,14 +122,14 @@ const Filter = ({ filters }: FilterProps) => {
                         <Skeleton loading={filterItem.loading} active paragraph>
                           <Input
                             placeholder={`Search ${filterItem.label}`}
-                            onChange={(e) => console.log(e)}
                             className={filterItem.className}
-                            value={filterItem.value}
+                            value={searchedTag}
+                            onChange={(e: any) => setSearchedTag(e.currentTarget.value)}
                           />
                           <List
-                            dataSource={Object.values(filterItem.items)}
+                            dataSource={filterItem.items.filter((tagItem) => tagItem.name.toString().toLowerCase().indexOf(searchedTag.toString().toLowerCase()) > -1)}
                             renderItem={(item) => (
-                              <List.Item key={item.name}>
+                              <List.Item key={item.id}>
                                 <Checkbox onChange={onChangeFilterTag} name={item.name}>
                                   {item.name} {`(${item.count})`}
                                 </Checkbox>
@@ -131,7 +141,6 @@ const Filter = ({ filters }: FilterProps) => {
                     </Col>
                   )
                 }
-
               </Col>
             )
           )
