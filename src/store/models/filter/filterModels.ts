@@ -1,6 +1,6 @@
 // Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
 
-import { ADD_FILTER_BY_BRAND, ADD_FILTER_BY_TAG, REMOVE_FILTER_BY_BRAND, REMOVE_FILTER_BY_TAG, SET_ORDER_BY } from "@store/types";
+import { ADD_FILTER_BY_BRAND, ADD_FILTER_BY_ITEM_TYPE, ADD_FILTER_BY_TAG, REMOVE_FILTER_BY_BRAND, REMOVE_FILTER_BY_ITEM_TYPE, REMOVE_FILTER_BY_TAG, SET_ORDER_BY } from "@store/types";
 
 export interface IAddFilterByBrand {
   type: typeof ADD_FILTER_BY_BRAND;
@@ -25,5 +25,14 @@ export interface ISetOrderByFilter {
   type: typeof SET_ORDER_BY;
   payload: string;
 }
+export interface IAddFilterByItemType {
+  type: typeof ADD_FILTER_BY_ITEM_TYPE;
+  payload: string;
+}
 
-export type FilterActionTypes = IAddFilterByBrand | IRemoveFilterByBrand | IAddFilterByTag | IRemoveFilterByTag | ISetOrderByFilter;
+export interface IRemoveFilterByItemType {
+  type: typeof REMOVE_FILTER_BY_ITEM_TYPE;
+  payload: string;
+}
+
+export type FilterActionTypes = IAddFilterByBrand | IRemoveFilterByBrand | IAddFilterByTag | IRemoveFilterByTag | ISetOrderByFilter | IAddFilterByItemType | IRemoveFilterByItemType;

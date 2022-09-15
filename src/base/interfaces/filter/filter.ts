@@ -26,6 +26,7 @@ interface IFilter {
 interface IFilterState {
   brand: string[];
   tag: string[];
+  itemType: string[];
   orderBy: string;
 }
 

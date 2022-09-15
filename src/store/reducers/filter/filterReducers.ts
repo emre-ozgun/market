@@ -2,11 +2,12 @@
 
 import { IFilterState } from "@base/interfaces";
 import { FilterActionTypes } from "@store/models";
-import { ADD_FILTER_BY_BRAND, ADD_FILTER_BY_TAG, REMOVE_FILTER_BY_BRAND, REMOVE_FILTER_BY_TAG, SET_ORDER_BY } from "@store/types";
+import { ADD_FILTER_BY_BRAND, ADD_FILTER_BY_ITEM_TYPE, ADD_FILTER_BY_TAG, REMOVE_FILTER_BY_BRAND, REMOVE_FILTER_BY_ITEM_TYPE, REMOVE_FILTER_BY_TAG, SET_ORDER_BY } from "@store/types";
 
 const initialState: IFilterState = {
   brand: [],
   tag: [],
+  itemType: ["mug"],
   orderBy: "price-asc"
 };
 
@@ -32,6 +33,16 @@ export function filterReducers(state: IFilterState = initialState, action: Filte
       return {
         ...state,
         tag: state.tag.filter((filter) => filter !== action.payload),
+      };
+    case ADD_FILTER_BY_ITEM_TYPE:
+      return {
+        ...state,
+        itemType: [...state.itemType, action.payload],
+      };
+    case REMOVE_FILTER_BY_ITEM_TYPE:
+      return {
+        ...state,
+        itemType: state.itemType.filter((filter) => filter !== action.payload),
       };
     case SET_ORDER_BY:
       return { ...state, orderBy: action.payload };
