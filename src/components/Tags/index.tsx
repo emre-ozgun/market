@@ -1,6 +1,11 @@
+// Copyright (c) 2022-present Onur Pamuk. All Rights Reserved.
+
 import React from "react"
 import { Tag } from "antd"
+
 import { ITags } from "@base/interfaces"
+
+
 
 type TagProps = {
   data: ITags[]
@@ -10,10 +15,10 @@ const Tags = ({ data }: TagProps) => {
   return (
     <>
       {
-        data.map(tItem => {
+        data.map(tagItem => {
           return (
-            <Tag key={`${tItem}_ TAG`}>
-              {tItem.tags}
+            <Tag key={tagItem.name}>
+              {tagItem.name}
             </Tag>
           )
         })
@@ -22,4 +27,4 @@ const Tags = ({ data }: TagProps) => {
   )
 }
 
-export default Tags
+export default Tags;
