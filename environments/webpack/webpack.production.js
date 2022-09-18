@@ -14,7 +14,7 @@ module.exports = merge(common, {
     historyApiFallback: true,
     open: true,
     hot: true,
-    port: 8082
+    port: 8081
   },
   optimization: {
     moduleIds: "deterministic",

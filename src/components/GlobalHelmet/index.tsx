@@ -28,7 +28,7 @@ const GlobalHelmet = ({ language, direction, title, description }: GlobalHelmetP
       <Helmet htmlAttributes={{ lang: language, dir: direction }}>
         <meta charSet="utf-8" />
         <meta name="description" content={description} />
-        <title>{`Getir | ${title}`}</title>
+        <title>{`Market | ${title}`}</title>
         <link rel="shortcut icon" href="favicon.ico?" type="image/x-icon" />
       </Helmet>
     </>
