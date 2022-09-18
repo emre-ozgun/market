@@ -37,6 +37,9 @@ const Market = () => {
     dispatch(LookupActions.getTagsAction());
   }, []);
 
+  console.log({ productData: products });
+  
+
   return (
     <Content title="Products" className="fadeIn">
       <Filter filters={filters} />
