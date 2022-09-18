@@ -4,7 +4,7 @@ The Market application is a shopping site application written using up-to-date t
 
 #### Production
 
-[![N|Solid](https://i.ibb.co/Bf6b47L/market.png)](https://getirchallange.netlify.app/)
+[![N|Solid](https://i.ibb.co/Bf6b47L/market.png)](https://s-market.netlify.app/)
 
 #### Used technologies
 
